@@ -1,0 +1,964 @@
+
+<!-- BANNER-AREA-START -->
+
+<ngb-carousel class="slider slide1"
+    style="position:relative; width: 60%; height: 100%; padding-top: 196px; margin-left: 300px; margin-bottom: 20px;">
+    <ng-template ngbSlide *ngFor="let slide of SpResult ; let i = index" [ngClass]="{'active': i === 1}">
+        <div class="picsum-img-wrapper ">
+            <a href="#" (click)="productList()"> <img [src]="slide.folderPath" alt="Random first slide" /></a>
+        </div>
+        <div class="carousel-caption">
+            <div class="text-des-container" style="margin-bottom: 100px; width: 100%;">
+                <div class="text-des">
+                    <h2 innerHtml="{{slide.sliderHeding}}">{{slide.sliderHeding}}</h2>
+                    <p>Limited offer 25% off </p>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</ngb-carousel>
+
+<!-- BANNER-AREA-END -->
+<!-- start service section -->
+
+<div class="description-services">
+    <div class="container">
+        <div class="row">
+            <div class="col col-md-3 col-sm-6 col-xs-12">
+                <div class="text-des1" routerLink="/about" routerLinkActive="active">
+                    <div><i class="fa fa-paper-plane"></i>
+                        <h3>About-Us</h3>
+                        <p>About Our shop</p>
+                        <p>Information</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-3 col-sm-6 col-xs-12">
+                <div class="text-des1" routerLink="/privacy-policy" routerLinkActive="active">
+                    <div class="des1"><i class="fa fa-rotate-right"></i>
+                        <h3>100% secure payments</h3>
+                        <p>Credit/Debit Card/Net-Banking </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-3 col-sm-6 col-xs-12">
+                <div class="text-des1" >
+                    <div><i class="fa fa-umbrella"></i>
+                        <h3>Support 24/7</h3>
+                        <p>Call us: +917972050414</p>
+                        <p>Call us: +91 7972050414</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-3 col-sm-6 col-xs-12">
+                <div class="text-des1"  routerLink="/return-policy" routerLinkActive="active">
+                    <div><i class="fa fa-tags"></i>
+                        <h3>Return policy</h3>
+                        <p>Return And Exchange <br>Items</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- service section end -->
+<div class="inner-box">
+    <div class="container">
+        <div class="row">
+            <!-- Banner -->
+            <div class="col-md-3 top-banner hidden-sm">
+                <div class="jtv-banner3">
+                    <div class="jtv-banner3-inner"><img src="assets/images/products/grocery_Img/Wahsing_Powder1.jpg"
+                            alt="HTML template">
+                        <div class="hover_content">
+                            <div class="hover_data">
+
+                                <p><a href="#" class="shop-now" style="margin-top: 100px;">Get it now!</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Best Sale Special Offer -->
+            <div class="col-sm-12 col-md-9 jtv-best-sale special-pro">
+                <div class="jtv-best-sale-list">
+                    <div class="wpb_wrapper">
+                        <div class="best-title text-left">
+                            <h2>Special Offer</h2>
+                        </div>
+                    </div>
+
+                    <div class="slider-items-products">
+                        <div id="jtv-best-sale-slider" class="product-flexslider">
+                            <div class="slider-items">
+                                <owl-carousel-o [options]="SpecialOffers">
+                                    <ng-container *ngFor="let row of ApiResult ; ">
+                                        <ng-template carouselSlide>
+                                            <div class="product-item">
+                                                <div class="item-inner" style="margin-right:18px;">
+                                                    <div class="product-thumbnail">
+                                                        <div class="icon-new-label new-left">New</div>
+                                                        <div class="pr-img-area"> <a id="first-img11"
+                                                                title="Product title here"
+                                                                (click)="RowSelected(row.id,row.imgPath11)">
+                                                                <figure> <img class="first-img1" [src]="row.imgPath11"
+                                                                        alt="HTML template"> <img class="hover-img"
+                                                                        [src]="row.imgPath21" alt="HTML template">
+                                                                </figure>
+                                                            </a> </div>
+                                                        <div class="pr-info-area">
+                                                            <div class="pr-button">
+                                                                <div class="mt-button add_to_compare"> <a
+                                                                        routerLink="/compare" routerLinkActive="active">
+                                                                        <i class="fa fa-link"></i></a></div>
+                                                                <div class="mt-button quick-view"> <a
+                                                                        (click)="RowSelected1(row.id)"> <i
+                                                                            class="fa fa-search"></i> </a>
+                                                                </div>
+                                                                <div class="mt-button add_to_wishlist">
+                                                                    <a href="#" (click)="select(row.id)">
+                                                                        <i class="fa fa-heart-o"></i>
+                                                                    </a>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item-info">
+                                                        <div class="info-inner">
+                                                            <div class="item-title"> <a title="Product title here"
+                                                                    innerHtml="{{row.productName}}">{{row.productName}}
+                                                                </a>
+                                                            </div>
+                                                            <div class="item-content">
+                                                                <div class="rating"> <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                </div>
+                                                                <div class="item-price">
+                                                                    <div class="price-box"> <span
+                                                                            class="regular-price">INR .
+                                                                            <span class="price"
+                                                                                innerHtml="{{row.mrp}}">{{row.mrp}}</span>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="pro-action">
+                                                                    <button type="submit" class="add-to-cart"
+                                                                        (click)="addtocart(row)"><span> Add to
+                                                                            Cart</span> </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </ng-template>
+
+                                    </ng-container>
+                                </owl-carousel-o>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- All products-->
+
+<div class="container">
+    <div class="home-tab col-md-12 col-sm-12">
+        <div class="tab-title text-left">
+            <h2>Best selling</h2>
+        </div>
+        <div id="productTabContent" class="tab-content">
+            <div class="tab-pane active in" id="computer">
+                <div class="featured-pro">
+                    <div class="slider-items-products">
+                        <div id="computer-slider" class="product-flexslider hidden-buttons">
+                            <div class="slider-items slider-width-col4" style="overflow: hidden;">
+                                <owl-carousel-o [options]="bestselling">
+                                    <ng-container *ngFor="let col of ApiResult1; let i = index">
+                                        <ng-template carouselSlide>
+                                            <div class="product-item">
+                                                <div class="item-inner">
+                                                    <div class="product-thumbnail">
+                                                        <div class="icon-new-label new-left">New</div>
+                                                        <div class="pr-img-area"> <a id="second-img2"
+                                                                (click)="RowSelected(col.id,col.imgPath11)"
+                                                                title="Product title here">
+                                                                <figure> <img class="second-img" [src]="col.imgPath11"
+                                                                        alt="HTML template"> <img class="hover-img"
+                                                                        [src]="col.imgPath21" alt="HTML template">
+                                                                </figure>
+                                                            </a> </div>
+                                                        <div class="pr-info-area">
+                                                            <div class="pr-button">
+                                                                <div class="mt-button add_to_compare"> <a
+                                                                        routerLink="/compare" routerLinkActive="active">
+                                                                        <i class="fa fa-link"></i>
+                                                                    </a> </div>
+                                                                <div class="mt-button quick-view"
+                                                                    (click)="RowSelected1(col.id)"> <a> <i
+                                                                            class="fa fa-search"></i> </a> </div>
+                                                                <div class="mt-button add_to_wishlist">
+                                                                    <a href="#" (click)="select(col.id)">
+                                                                        <i class="fa fa-heart-o"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item-info">
+                                                        <div class="info-inner">
+                                                            <div class="item-title"> <a title="Product title here"
+                                                                    innerHtml="{{col.productName}}">{{col.productName}}</a>
+                                                            </div>
+                                                            <div class="item-content">
+                                                                <div class="rating"> <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                </div>
+                                                                <div class="item-price">
+                                                                    <div class="price-box">
+                                                                        <span class="regular-price">INR .
+                                                                            <span class="price"
+                                                                                innerHtml="{{col.mrp}}">{{col.mrp}}
+                                                                            </span>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="pro-action">
+                                                                    <button type="button" class="add-to-cart"
+                                                                        (click)="addtocart(col)"><span> Add
+                                                                            to
+                                                                            Cart</span> </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </ng-template>
+
+                                    </ng-container>
+                                </owl-carousel-o>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- daily Deal Section -->
+<div class="container">
+    <div class="row">
+        <div class="daily-deal-section">
+            <!-- daily Deal Section Area     -->
+            <div class="col-md-7 daily-deal" style="padding-top:10% ;">
+                <h3 class="deal-title">Deal of the day</h3>
+                <div class="title-divider"><span></span></div>
+
+                <div class="hot-offer-text">Summer Sale <span>2024</span></div>
+                <div class="box-timer"> <span class="des-hot-deal">Hurry up! Special offer</span>
+                    <div class="time" data-countdown="countdown" data-date="10-10-2023-00-00-00"></div>
+
+                </div>
+            </div>
+
+            <div class="col-md-4 hot-pr-img-area">
+                <div id="daily-deal-slider" class="product-flexslider hidden-buttons">
+                    <div class="slider-items slider-width-col4" style="height: 300px; overflow: hidden;">
+
+                        <div class="slides">
+                            <div class="slider" *ngFor="let slide of SpResult ; let i = index"
+                                [ngClass]="{'active': i === 1}">
+                                <div class="legend"></div>
+                                <div class="content">
+                                    <div class="text-des-container">
+                                        <div class="text-des">
+                                            <h2 innerHtml="{{slide.sliderHeding}}">{{slide.sliderHeding}}</h2>
+                                            <p>Limited offer 25% off </p>
+                                        </div>
+                                    </div>
+                                    <div class="image"> <img src="{{slide.folderPath}}"> </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+
+                        <!-- Add other product slides similarly -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Product Gallery-->
+<!-- <div class="featured-products">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-4 jtv-best-sale">
+                <div class="jtv-best-sale-list">
+                    <div class="wpb_wrapper">
+                        <div class="best-title text-left">
+                            <h2>Top Rate</h2>
+                        </div>
+                    </div>
+
+                   <!--<div class="slider-items-products">
+                        <div id="toprate-products-slider" class="product-flexslider">
+                            <div class=" slider-width-col4">
+                                <ul class="products-grid">
+                                    <li class="item" *ngFor="let row of ApiResult ; let i = index">
+                                        <div class="item-inner">
+                                            <div class="item-img">
+                                                <a id="second-img2" (click)="RowSelected(row.id,row.imgPath11)"
+                                                    title="Product title here" href="product_detail.html">
+                                                    <img alt="HTML template" [src]="row.imgPath11">
+                                                </a>
+                                            </div>
+
+                                            <div class="item-info">
+                                                <div class="info-inner">
+                                                    <div class="item-title">
+                                                        <div class="item-title"> <a title="Product title here"
+                                                                innerHtml="{{row.productName}}">{{row.productName}}</a>
+                                                        </div>
+                                                       ------ <a title="Product title here" href="single_product.html">  </a> -------
+                                                    </div>
+                                                    <div class="rating"> <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i> <i class="fa fa-star-o"></i>
+                                                    </div>
+                                                    <div class="item-price">
+                                                        <div class="price-box">
+                                                            <span class="regular-price">INR .
+                                                                <span class="price" innerHtml="{{row.mrp}}">{{row.mrp}}
+                                                                </span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pro-action">
+                                                        <button type="button" class="add-to-cart">
+                                                            <i class="fa fa-shopping-cart"><a routerLink="/my_cart">
+                                                                </a></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="pr-button-hover">
+                                                        <div class="mt-button add_to_wishlist"> <a href="wishlist.html"
+                                                                routerLink="/wishlist">
+                                                                <i class="fa fa-heart-o"></i> </a>
+                                                        </div>
+                                                        <div class="mt-button add_to_compare"> <a href="compare.html"
+                                                                routerLink="/compare">
+                                                                <i class="fa fa-link"></i> </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="item">
+                                        <div class="item-inner">
+                                            <div class="item-img"> <a class="product-image" title="Retis lapen casen"
+                                                    href="product_detail.html">
+                                                    <img alt="HTML template"
+                                                        src="assets/images/products/grocery_Img/BathroomCleaner.jpg"></a>
+                                            </div>
+                                            <div class="item-info">
+                                                <div class="info-inner">
+                                                    <div class="item-title">
+                                                        <a title="Product title here"
+                                                            href="single_product.html">Bathroom Cleaner </a>
+                                                    </div>
+                                                    <div class="rating"> <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
+                                                    </div>
+                                                    <div class="item-price">
+                                                        <div class="price-box">
+                                                            <span class="regular-price"><span class="price">INR
+                                                                    80.00</span></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pro-action">
+                                                        <button type="button" class="add-to-cart">
+                                                            <i class="fa fa-shopping-cart"><a href="my_cart.html"
+                                                                    routerLink="my_cart"></a></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="pr-button-hover">
+                                                        <div class="mt-button add_to_wishlist"> <a href="wishlist.html"
+                                                                routerLink="wishlist">
+                                                                <i class="fa fa-heart-o"></i> </a>
+                                                        </div>
+                                                        <div class="mt-button add_to_compare"> <a href="compare.html"
+                                                                routerLink="compare">
+                                                                <i class="fa fa-link"></i> </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul> ----
+
+
+                                <-- <ul class="products-grid">
+                                    <li class="item">
+                                        <div class="item-inner">
+                                            <div class="item-img"> <a class="product-image" title="Retis lapen casen"
+                                                    href="product_detail.html">
+                                                    <img alt="HTML template"
+                                                        src="assets/images/products/grocery_Img/ClothWashSoup.jpg">
+                                                </a> </div>
+                                            <div class="item-info">
+                                                <div class="info-inner">
+                                                    <div class="item-title"> <a title="Product title here"
+                                                            href="single_product.html"> cloth soup </a>
+                                                    </div>
+                                                    <div class="rating"> <i class="fa fa-star"></i> <i
+                                                            class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
+                                                    </div>
+                                                    <div class="item-price">
+                                                        <div class="price-box"> <span class="regular-price"><span
+                                                                    class="price">INR
+                                                                    30.00</span></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pro-action">
+                                                        <button type="button" class="add-to-cart"><i
+                                                                class="fa fa-shopping-cart"></i></button>
+                                                    </div>
+                                                    <div class="pr-button-hover">
+                                                        <div class="mt-button add_to_wishlist"> <a href="wishlist.html"
+                                                                routerLink="wishlist">
+                                                                <i class="fa fa-heart-o"></i> </a> </div>
+                                                        <div class="mt-button add_to_compare"> <a href="compare.html"
+                                                                routerLink="compare">
+                                                                <i class="fa fa-link"></i> </a> </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <-----Product Gallery End TopRate ----->
+
+<!--Banner 1-->
+<!-- <div class="col-md-4 top-banner hidden-sm">
+                <div class="jtv-banner3" style="margin-top: 15%;">
+                    <div class="jtv-banner3-inner"><a href="#"><img
+                                src="assets/images/products/grocery_Img/HydroCloricAcidStrong.jpg" style=" border: 2px solid blue;
+                                border-radius: 25px" width="100%" width="100%" height="60%" alt="HTML template"></a>
+                        <div class="hover_content">
+                            <div class="hover_data bottom">
+                                <div class="desc-text">Top Brands at discount prices </div>
+                                <div class="title">Grocery Sale</div>
+                                <span> HydroCloric Acid</span>
+                                <p><a href="#" class="shop-now">Get it now!</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div><br><br>
+            </div> -->
+<!--Banner 1 End-->
+
+<!--New Product Add Start-->
+<!-- <div class="col-sm-12 col-md-4 jtv-best-sale mat-display-4">
+                <div class="jtv-best-sale-list">
+                    <div class="wpb_wrapper">
+                        <div class="best-title text-left">
+                            <h2>New products</h2>
+                        </div>
+                    </div>
+                    <div class="slider-items-products">
+                        <div id="new-products-slider" class="product-flexslider">
+                            <div class=" slider-width-col4">
+                                --- <ul class="products-grid">
+                                    <li class="item" *ngFor="let row of ApiResult ; let i = index">
+                                        <div class="item-inner">
+                                            <div class="item-img"> <a id="second-img2"
+                                                    (click)="RowSelected(row.id,row.imgPath21)"
+                                                    title="Product title here" href="product_detail.html">
+                                                    <img alt="HTML template" [src]="row.imgPath21">
+                                                </a> </div>
+                                            <div class="item-info">
+                                                <div class="info-inner">
+                                                    <div class="item-title"> <a title="Product title here"
+                                                            innerHtml="{{row.productName}}">{{row.productName}}</a>
+                                                    </div>
+                                                    <-- <div class="item-title"> <a title="Product title here"
+                                                            href="single_product.html">Glass Cleaner </a>
+                                                    </div> ----
+                                                    <div class="rating"> <i class="fa fa-star"></i> <i
+                                                            class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
+                                                    </div>
+                                                    <div class="item-price">
+                                                        <div class="price-box"> <span class="regular-price">INR .
+                                                                <span class="price" innerHtml="{{row.mrp}}">{{row.mrp}}
+                                                                </span>
+                                                            </span>
+                                                        </div>
+
+                                                        <div class="pro-action">
+                                                            <button type="button" class="add-to-cart"><i
+                                                                    class="fa fa-shopping-cart"><a href="my-cart.html" routerLink="/my-cart"></a></i></button>
+                                                        </div>
+                                                        <div class="pr-button-hover">
+                                                            <div class="mt-button add_to_wishlist"> <a
+                                                                    href="wishlist.html" routerLink="wishlist">
+                                                                    <i class="fa fa-heart-o"></i> </a>
+                                                            </div>
+                                                            <div class="mt-button add_to_compare"> <a
+                                                                    href="compare.html" routerLink="compare">
+                                                                    <i class="fa fa-link"></i> </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>---
+
+
+                                    <--- <li class="item">
+                                        <div class="item-inner">
+                                            <div class="item-img"> <a class="product-image" title="Retis lapen casen"
+                                                    href="product_detail.html">
+                                                    <img alt="HTML template"
+                                                        src="assets/images/products/grocery_Img/flooreCleaner2.jpg"
+                                                        height="20%">
+                                                </a> </div>
+                                            <div class="item-info">
+                                                <div class="info-inner">
+                                                    <div class="item-title"> <a title="Product title here"
+                                                            href="single_product.html">Floore Cleaner
+                                                            Liquid</a> </div>
+                                                    <div class="rating"> <i class="fa fa-star"></i> <i
+                                                            class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
+                                                    </div>
+                                                    <div class="item-price">
+                                                        <div class="price-box">
+                                                            <p class="special-price"> <span class="price-label">Special
+                                                                    Price</span> <span class="price"> INR
+                                                                    70.00 </span>
+                                                            </p>
+                                                            <p class="old-price"> <span class="price-label">Regular
+                                                                    Price:</span> <span class="price"> INR
+                                                                    100.00 </span>
+
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pro-action">
+                                                        <button type="button" class="add-to-cart"><i
+                                                                class="fa fa-shopping-cart"></i></button>
+                                                    </div>
+                                                    <div class="pr-button-hover">
+                                                        <div class="mt-button add_to_wishlist"> <a href="wishlist.html"
+                                                                routerLink="wishlist">
+                                                                <i class="fa fa-heart-o"></i> </a> </div>
+                                                        <div class="mt-button add_to_compare"> <a href="compare.html"
+                                                                routerLink="compare">
+                                                                <i class="fa fa-link"></i> </a> </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li> ----
+                                </ul> ---
+                                --- <ul class="products-grid">
+                                 <li class="item"> 
+                            <div class="item-inner">
+                                <div class="item-img"> <a class="product-image"
+                                        title="Retis lapen casen" href="product_detail.html">
+                                        <img alt="HTML template"
+                                            src="assets/images/products/grocery_Img/flooreCleaner3.jpg" height="20%">
+                                    </a> </div>
+                                <div class="item-info">
+                                    <div class="info-inner">
+                                        <div class="item-title"> <a title="Product title here"
+                                                href="single_product.html">Floore Cleaner Type
+                                                2</a> </div>
+                                        <div class="rating"> <i class="fa fa-star"></i> <i
+                                                class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i> <i
+                                                class="fa fa-star-o"></i>
+                                        </div>
+                                        <div class="item-price">
+                                            <div class="price-box"> <span class="regular-price">
+                                                    <span class="price">INR 125.00</span>
+                                                </span> </div>
+
+                                        </div>
+                                        <div class="pro-action">
+                                            <button type="button" class="add-to-cart"><i
+                                                    class="fa fa-shopping-cart"></i></button>
+                                        </div>
+                                        <div class="pr-button-hover">
+                                            <div class="mt-button add_to_wishlist" ><a
+                                                    href="wishlist.html" routerLink="wishlist">
+                                                    <i class="fa fa-heart-o"></i> </a> </div>
+                                            <div class="mt-button add_to_compare"> <a
+                                                    href="compare.html" routerLink="compare">
+                                                    <i class="fa fa-link"></i> </a> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li> 
+                                    <li class="item"> 
+                                        <div class="item-inner">
+                                            <div class="item-img"> <a class="product-image" title="Retis lapen casen"
+                                                    href="product_detail.html">
+                                                    <img alt="HTML template"
+                                                        src="assets/images/products/grocery_Img/DishWashLiqwidSoup.jpg"></a>
+                                            </div>
+                                            <div class="item-info">
+                                                <div class="info-inner">
+                                                    <div class="item-title"> <a title="Product title here"
+                                                            href="single_product.html">DishWash Soup </a>
+                                                    </div>
+                                                    <div class="rating"> <i class="fa fa-star"></i> <i
+                                                            class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
+                                                    </div>
+                                                    <div class="item-price">
+                                                        <div class="price-box">
+                                                            <p class="special-price"> <span class="price-label">Special
+                                                                    Price</span> <span class="price"> INR
+                                                                    20.00 </span>
+                                                            </p>
+                                                            <p class="old-price"> <span class="price-label">Regular
+                                                                    Price:</span> <span class="price"> INR
+                                                                    40.00 </span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pro-action">
+                                                        <button type="button" class="add-to-cart"><i
+                                                                class="fa fa-shopping-cart"></i></button>
+                                                    </div>
+                                                    <div class="pr-button-hover">
+                                                        <div class="mt-button add_to_wishlist"> <a href="wishlist.html"
+                                                                routerLink="wishlist">
+                                                                <i class="fa fa-heart-o"></i> </a> </div>
+                                                        <div class="mt-button add_to_compare"> <a href="compare.html"
+                                                                routerLink="compare">
+                                                                <i class="fa fa-link"></i> </a> </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul> ----
+                                <ul class="products-grid">
+                                    ---- <li class="item">
+                            <div class="item-inner">
+                                <div class="item-img"> <a class="product-image"
+                                        title="Retis lapen casen" href="product_detail.html">
+                                        <img alt="HTML template"
+                                            src="assets/images/products/grocery_Img/Glycerin1.jpg">
+                                    </a> </div>
+                                <div class="item-info">
+                                    <div class="info-inner">
+                                        <div class="item-title"> <a title="Product title here"
+                                                href="single_product.html">Glycerin </a> </div>
+                                        <div class="rating"> <i class="fa fa-star"></i> <i
+                                                class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i> <i class="fa fa-star-o"></i>
+                                        </div>
+                                        <div class="item-price">
+                                            <div class="price-box"> <span class="regular-price">
+                                                    <span class="price">INR 30.00</span> </span>
+                                            </div>
+
+                                        </div>
+                                        <div class="pro-action">
+                                            <button type="button" class="add-to-cart"><i
+                                                    class="fa fa-shopping-cart"></i></button>
+                                        </div>
+                                        <div class="pr-button-hover">
+                                            <div class="mt-button add_to_wishlist" > <a
+                                                    href="wishlist.html" routerLink="wishlist">
+                                                    <i class="fa fa-heart-o"></i> </a> </div>
+                                            <div class="mt-button add_to_compare"> <a
+                                                    href="compare.html" routerLink="compare">
+                                                    <i class="fa fa-link"></i> </a> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li> --
+                                    -- <li class="item">
+                            <div class="item-inner">
+                                <div class="item-img"> <a class="product-image"
+                                        title="Retis lapen casen" href="product_detail.html">
+                                        <img alt="HTML template"
+                                            src="assets/images/products/grocery_Img/NeemHandwash.jpg">
+                                    </a> </div>
+                                <div class="item-info">
+                                    <div class="info-inner">
+                                        <div class="item-title"> <a title="Product title here"
+                                                href="single_product.html">Neem Handwash </a>
+                                        </div>
+                                        <div class="rating"> <i class="fa fa-star"></i> <i
+                                                class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i> <i class="fa fa-star-o"></i>
+                                        </div>
+                                        <div class="item-price">
+                                            <div class="price-box">
+                                                <p class="special-price"> <span
+                                                        class="price-label">Special
+                                                         HEAD Price</span> <span
+                                                                class="price">
+                                                                INR 56.00 </span>
+                                                </p>
+                                                <p class="old-price"> <span
+                                                        class="price-label">Regular
+                                                        Price:</span> <span class="price"> INR
+                                                        69.00 </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="pro-action">
+                                            <button type="button" class="add-to-cart"><i
+                                                    class="fa fa-shopping-cart"></i></button>
+                                        </div>
+                                        <div class="pr-button-hover">
+                                            <div class="mt-button add_to_wishlist" ><a
+                                                    href="wishlist.html" routerLink="wishlist">
+                                                    <i class="fa fa-heart-o"></i> </a> </div>
+                                            <div class="mt-button add_to_compare"> <a
+                                                    href="compare.html" routerLink="compare">
+                                                    <i class="fa fa-link"></i> </a> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li> 
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> ---
+            --New Product Add- End----
+        </div>
+    </div>
+</div> 
+</div>
+</div> -->
+
+
+
+
+<!-- our clients Slider -->
+
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-md-12 col-xs-12">
+            <div class="our-clients">
+                <div class="slider-items-products">
+                    <div id="our-clients-slider" class="product-flexslider hidden-buttons">
+                        <div class="slider-items slider-width-col6">
+                            <div class="item"><a href="#"><img src="assets/images/brand1.png" alt="Image"></a>
+                            </div>
+                            <div class="item"><a href="#"><img src="assets/images/brand2.png" alt="Image"></a>
+                            </div>
+                            <div class="item"><a href="#"><img src="assets/images/brand3.png" alt="Image"></a>
+                            </div>
+                            <div class="item"><a href="#"><img src="assets/images/brand4.png" alt="Image"></a>
+                            </div>
+                            <div class="item"><a href="#"><img src="assets/images/brand5.png" alt="Image"></a>
+                            </div>
+                            <div class="item"><a href="#"><img src="assets/images/brand6.png" alt="Image"></a>
+                            </div>
+                            <div class="item"><a href="#"><img src="assets/images/brand7.png" alt="Image"></a>
+                            </div>
+                            <div class="item"><a href="#"><img src="assets/images/brand8.png" alt="Image"></a>
+                            </div>
+                            <div class="item"><a href="#"><img src="assets/images/brand9.png" alt="Image"></a>
+                            </div>
+                            <div class="item"><a href="#"><img src="assets/images/brand10.png" alt="Image"></a>
+                            </div>
+                            <div class="item"><a href="#"><img src="assets/images/brand11.png" alt="Image"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- BANNER-AREA-START -->
+<!-- <section class="banner-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-lg-6 col-md-6">
+                        <div class="banner-block"> <a href="#"> <img
+                                    src="assets/images/products/grocery_Img/PanirMasala.jpg" alt="banner sunglasses">
+                            </a>
+                            <div class="text-des-container">
+                                <div class="text-des">
+                                    <h2>Panir Masala</h2>
+                                    <p>Limited offer 25% off </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-lg-6 col-md-6">
+                        <div class="banner-block"> <a href="#"> <img
+                                    src="assets/images/products/grocery_Img/pastaMasala.jpg" alt="banner kids">
+                            </a>
+                            <div class="text-des-container">
+                                <div class="text-des">
+                                    <h2>Pasta Masala</h2>
+                                    <p> Limited offer 25% off </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4">
+                <div class="banner-block"> <a href="#"> <img src="assets/images/products/grocery_Img/BiryaniMasala.jpg"
+                            alt="banner arrival">
+                    </a>
+                    <div class="text-des-container">
+                        <div class="text-des">
+                            <h2>Biryani Masala</h2>2
+                            <p>Limited Offer 25% off</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+<!-- BANNER-AREA-END -->
+
+<!-- <div class="footer-newsletter">
+    <div class="container">
+        <div class="row">
+             ------------------- Newsletter-------------------- 
+            <div class="col-md-6 col-sm-6 ">
+                <form id="newsletter-validate-detail" method="post" action="#">
+                    <h3>Join Our Newsletter</h3>
+                    <div class="title-divider"><span></span></div>
+                    <p class="sub-title text-center">Get 25% off</p>
+                    <div class="newsletter-inner">
+                        <input class="newsletter-email" name='Email' placeholder='Enter Your Email' />
+                        <button class="button subscribe" type="submit" title="Subscribe">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+            <!-- Customers Box 
+             <div class="col-sm-6 col-xs-12 testimonials">
+                        <div class="page-header">
+                            <h2>What Our Customers Say</h2>
+                        </div>
+                        <div class="slider-items-products">
+                            <div id="testimonials-slider" class="product-flexslider hidden-buttons home-testimonials">
+                                <div class="slider-items slider-width-col4 ">
+                                    <div class="holder">
+                                        <blockquote>Great Product For Budget Concerned Peoples</blockquote>
+                                        <div class="thumb"> <img src="assets/images/testimonials-img3.jpg"
+                                                alt="testimonials img">
+                                        </div>
+                                        <div class="holder-info"> <strong class="name">John Doe</strong> <strong
+                                                class="designation">CEO, Company</strong></div>
+                                    </div>
+                                    <div class="holder">
+                                        <blockquote>Product is good. The red and green lights could have been
+                                            brighter since they are not clearly visible during day time.
+                                        </blockquote>
+                                        <div class="thumb"> <img src="assets/images/testimonials-img1.jpg"
+                                                alt="testimonials img">
+                                        </div>
+                                        <div class="holder-info"> <strong class="name">Vince Roy</strong> <strong
+                                                class="designation">CEO, Newspaper</strong> </div>
+                                    </div>
+                                    <div class="holder">
+                                        <blockquote>Have owned this monitor for over 6 months now. have used this
+                                            mostly for gaming on ps4 and it works really well. colors and brightness
+                                            are good. </blockquote>
+                                        <div class="thumb"> <img src="assets/images/testimonials-img2.jpg"
+                                                alt="testimonials img">
+                                        </div>
+                                        <div class="holder-info"><strong class="name">John Doe</strong> <strong
+                                                class="designation">CEO, ABC Softwear</strong></div>
+                                    </div>
+                                    <div class="holder">
+                                        <blockquote>This is the best monitor one can get for 15k.
+                                            I wanted all that height adjustments, swivel and portrait mode, only
+                                            this monitor offered it and I am happy to buy it.</blockquote>
+                                        <div class="thumb"> <img src="assets/images/testimonials-img4.jpg"
+                                                alt="testimonials img">
+                                        </div>
+                                        <div class="holder-info"> <strong class="name">Vince Roy</strong> <strong
+                                                class="designation">CEO, XYZ Softwear</strong></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+        </div>
+    </div>
+</div> -->

@@ -1,0 +1,27 @@
+.store_info{
+    margin-left: 20px;
+    /* width: 350px; */
+}
+.store_info .cw-item{
+    background: #fff;
+    margin-bottom: 11px;
+    box-shadow: 0 8px 35px 10px #e8e8e8;
+    box-shadow: 0 8px 35px 10px #e8e8e8;
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 10px;
+}
+.store_info .ci-icon{
+    font-size: 30px;
+    color:  #e83f33;
+}
+   
+
+.store_info .ci-icon:hover{
+    font-size: 40px;
+    color: #cb2d22;
+}
+.store_info p:hover{
+    color: #cb2d22;;
+}

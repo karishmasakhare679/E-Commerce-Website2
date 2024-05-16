@@ -1,0 +1,78 @@
+/* You can add global styles to this file, and also import other style files */
+.slider-items-products .owl-next ,.slider-items-products .owl-prev{
+    color: black !important;
+    border-radius: 50%;
+    height: 40px !important;
+    width: 40px !important;
+    /* background: rgb(158 158 158 /28%) !important; */
+    position: absolute;
+}
+
+.slider-items-products .owl-next {
+right: -667px;
+margin-top: 100px;
+}
+
+.slider-items-products .owl-prev{
+left: 0;
+margin-top: 100px;
+
+}
+
+.slider-items-products .owl-next i ,.slider-items-products .owl-prev i{
+font-size: 30px;
+
+}
+
+/* You can add global styles to this file, and also import other style files */
+#computer-slider .owl-next ,#computer-slider .owl-prev{
+    color: red !important;
+    border-radius: 50%;
+    height: 40px !important;
+    width: 40px !important;
+    /* background: rgb(158 158 158 /28%) !important; */
+    position: absolute;
+}
+
+#computer-slider .owl-next {
+right: -881px;
+margin-top: 100px;
+}
+
+#computer-slider .owl-prev{
+    left: 0;
+    margin-top: 100px;
+    
+    }
+    
+    #computer-slider .owl-next i ,#computer-slider .owl-prev i{
+    font-size: 30px;
+    
+    }
+@media (max-width:992px) {
+    #computer-slider .owl-next {
+        right:-210px;
+        margin-top: 150px;
+        }  
+        #computer-slider .owl-prev{
+            left: 0;
+            margin-top:150px;
+            
+            }
+            
+}
+@media (max-width:992px){
+    .slider-items-products .owl-next {
+        right: -17px;
+        margin-top: 40%;
+        }
+        
+        .slider-items-products .owl-prev{
+        left: 0;
+        margin-top: 40%;
+        
+        }
+}
+
+
+

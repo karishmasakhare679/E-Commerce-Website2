@@ -1,0 +1,121 @@
+<div class="breadcrumbs" style="padding-top: 224px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <ul>
+          <li class="home"> <a title="Go to Home Page" routerLink="/home"
+              routerLinkActive="active">Home</a><span>»</span></li>
+          <li><strong>Checkout</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="main-container col2-right-layout">
+  <div class="main container">
+    <div class="row">
+      <div class="col-main col-sm-9 col-xs-12">
+        <div class="page-title">
+          <h2>Checkout</h2>
+        </div>
+        <div class="page-content checkout-page">
+
+          <h4 class="checkout-sep">1. Checkout Method</h4>
+          <div class="box-border">
+            <div class="row">
+              <!-- <div class="col-sm-6">
+                  <h5>Checkout as a Guest or Register</h5>
+                  <p>Register with us for future convenience:</p>
+                  <ul>
+                    <li>
+                      <label>
+                        <input type="radio" name="radio1">
+                        Checkout as Guest</label>
+                    </li>
+                    <li>
+                      <label>
+                        <input type="radio" name="radio1">
+                        Register</label>
+                    </li>
+                  </ul>
+                  <br>
+                  <h4>Register and save time!</h4>
+                  <p>Register with us for future convenience:</p>
+                  <p><i class="fa fa-check-circle text-primary"></i> Fast and easy check out</p>
+                  <p><i class="fa fa-check-circle text-primary"></i> Easy access to your order history and status</p>
+                  <button class="button"><i class="fa fa-angle-double-right"></i>&nbsp; <span>Continue</span></button>
+                </div> -->
+              <div class="col-sm-6">
+                <h5>Login</h5>
+                <form [formGroup]="loginform" id="tab1">
+                  <p>Already registered? Please log in below:</p>
+                  <label>User Name</label>
+                  <input type="text" class="form-control input"  formControlName="email">
+                  <label>Password</label>
+                  <input type="password" class="form-control input" formControlName="password">
+                  <!-- <p><a href="#">Forgot your password?</a></p> -->
+                  <button class="button" type="submit" (click)="login()"><i class="icon-login"></i>&nbsp; <span>Login</span></button>&nbsp;
+                </form>
+               
+              </div>
+            </div>
+          </div>
+            
+          <h4 class="checkout-sep last" >2. Order Review</h4>
+          <div class="box-border" style="display:block;">
+            <div class="table-responsive" id="tab2">
+              <table class="table table-bordered cart_summary" *ngFor="let item of products; let i = index">
+                <thead>
+                  <tr>
+                    <th class="cart_product">Product</th>
+                    <th>Description</th>
+                    <th>Avail.</th>
+                    <th>Unit price</th>
+                    <th>Qty</th>
+                    <th>Total</th>
+                    <th class="action"><i class="fa fa-trash-o"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="cart_product"><a><img [src]="item.folderPath1" alt="Product"></a></td>
+                    <td class="cart_description">
+                      <p class="product-name"><a >{{item.productName}} </a></p>
+                      <small><a>{{item.color}}</a></small><br>
+                      <small><a>{{item.size}}</a></small>
+                    </td>
+                    <td class="cart_avail"><span class="label label-success">In stock</span></td>
+                    <td class="price"><span>Rs.{{item.mrp}} </span></td>
+                    <td class="qty"><input class="form-control input-sm" type="text" value="{{item.qty}}"></td>
+                    <td class="price"><span>Rs.{{item.totalPrice}} </span></td>
+                    <td class="action" (click)="removeItem(item)"><a ><i class="fa fa-trash-o"></i></a></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table table-bordered cart_summary">
+                <tfoot>
+                  <tr>
+                    <td colspan="2" rowspan="2"></td>
+                    <td colspan="3">Total products (tax incl.)</td>
+                    <td colspan="2">Rs.{{grandTotal}}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="3"><strong>Total</strong></td>
+                    <td colspan="2"><strong>Rs.{{grandTotal}}</strong></td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- <div *ngFor="let item of dataSource">       -->
+              <!-- <h6 id="ForBenDefault" style="font-size:15px; box-shadow: 0px 1px 6px #d3dee5; padding: 20px; margin: 0% 34%;
+              text-align: center;"><b>Payable Amount :</b> <br><br> Rs.{{grand}}/- </h6> -->
+                    <button class="button pull-right" type="submit"  (click)="pay()"><span>Place Order</span></button>
+            <!-- </div> -->
+
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>

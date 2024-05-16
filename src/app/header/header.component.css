@@ -1,0 +1,422 @@
+.jtv-sticky-header {
+    position: fixed;
+    margin-top: 0px;
+    z-index: 500;
+    display: block;
+    top: 0px;
+    width: 100%;
+}
+
+#mobile-menu {
+    position: fixed;
+    margin-top: 0px;
+    z-index: 1000;
+    display: block;
+    top: 0px;
+    width: 100%;
+}
+
+/* define a fixed width for the entire menu */
+
+.navigation {
+    width: 300px;
+}
+
+.dropdown .current-open span {
+    cursor: pointer;
+}
+
+.cart-icon .icons {
+    cursor: pointer;
+}
+
+.menu-items .menu-item {
+    cursor: pointer;
+}
+
+.btn-search {
+    padding: 10px;
+    font-size: 20px;
+    margin-top: -4px;
+}
+
+
+/*///////////////////// CSS for me //////////////////////////////////////////////////////////////*/
+.top-cart-contain .mini-cart .basket {
+    margin-top: 30px;
+}
+
+#tablelist {
+    display: block;
+    border: 0px solid blue;
+    margin-left: 5px;
+    padding: 10px;
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+.menu {
+    border: none;
+}
+
+.menu .dropdown {
+    position: relative;
+}
+
+.menu .head {
+    display: none;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu ul .dropdown a {
+    padding-right: 15px;
+}
+
+.menu i {
+    font-size: 10px;
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    color: hsl(0, 0%, 100%);
+    top: calc(50% - 5px);
+}
+
+.menu>ul>li>i {
+    right: 0;
+}
+
+.menu>ul>li {
+    display: inline-block;
+}
+
+.menu>ul>li:not(:last-child) {
+    margin-right: 40px;
+}
+
+.menu a {
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 16px;
+    color: hsl(0, 0%, 100%);
+    line-height: 1.5;
+    display: block;
+}
+
+/* start sbu menu */
+.menu .sub-menu {
+    position: absolute;
+    top: 100%;
+    left: -25;
+    width: 230px;
+    padding: 15px 0;
+    background-color: hsl(0, 62%, 46%);
+    box-shadow: 0 0 5px hsla(0, 0%, 2%, 0.5);
+    border-radius: 10px;
+    z-index: 1;
+    transform-origin: top;
+    transform: scaleY(0);
+    visibility: visible;
+    opacity: 0;
+
+}
+
+.menu .sub-menu a {
+    padding: 15px 24px;
+    padding-right: 34px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.menu .sub-menu i {
+    transform: rotate(-90deg);
+    right: 24px;
+}
+
+.menu .sub-menu .dropdown>a {
+    padding-right: 34px;
+
+}
+
+
+.menu .sub-menu span {
+    background-image: linear-gradient(hsl(0, 0%, 100%), hsl(0, 0%, 100%));
+    background-size: 0 1px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    transition: background-size 0.5s ease;
+
+}
+
+.menu .sub-menu li:hover>a>span {
+    background-size: 100% 1px;
+}
+
+/* start code for sub-menu-right */
+.menu .sub-menu-right {
+    left: 85%;
+    top: 0;
+
+}
+
+.menu li:hover>.sub-menu {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+    transition: all 0.10 ease;
+
+}
+
+.header-right .open-menu-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: hsl(0, 0%, 100%);
+    font-size: 16px;
+}
+
+/* .open-menu-btn{
+     display: none; 
+}
+.close-menu-btn{
+    display: none;
+}
+
+/* for mobile Navabar 
+@media only screen and (min-width: 280px) and (max-width: 479px){
+    .container{
+        padding: 12px 0;
+    }
+    .container .menu{
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 320px;
+        height: 100%;
+        background-color: hsl(0, 62%, 46%);
+        padding: 15px 30px 30px;
+        z-index: 1;
+        overflow-y: auto;
+        transform: translateX(100%);
+    }
+    .container .menu.open{
+        transform: none;
+    }
+    
+    .container .menu .head{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 25px;
+    }
+    .container .menu .head h2{
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .container .menu .close-menu-btn{
+        height: 35px;
+        width: 35px;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        cursor: pointer;
+    }
+    .container .menu .close-menu-btn::before
+    .container .menu .close-menu-btn::after{
+        content: '';
+        position: absolute;
+        width: 80%;
+        height: 2px;
+        background-color: hsl(0, 0%, 100%);
+
+    }
+    .container .menu .close-menu-btn::before{
+        transform: rotate(-45deg);
+    }
+    .container .menu .close-menu-btn::after{
+        transform: rotate(45deg);
+    }
+
+    .container .menu >ul >li{
+        display: block;
+    }
+    .container .menu >ul >li :not(:last-child)
+    {
+        margin-right: 0;
+    }
+    .container .menu li{
+        border-bottom: 1px solid hsla(0, 0%, 100%, 0.25);
+    }
+    .container .menu li:first-child{
+        border-top: 1px solid hsla(0, 0%, 100%, 0.25);
+    }
+    .container .menu > ul > li > a{
+        padding: 12px 0;
+    }
+    .container .menu > ul > .dropdown > a{
+        padding-right: 34px;
+    }
+    .container .menu i{
+        height: 34px;
+        width: 34px;
+        border: 1px solid hsla(0, 0%, 100%, 0.25);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: auto;
+        cursor: pointer;
+        top: 7px;
+    }
+    .container .menu .dropdown.active >i{ 
+         background-color: hsla(0, 0%, 100%, 0.25);
+        transform: rotate(180deg);
+    }
+
+    .container .menu .dropdown.active > .sub-menu{
+        display: block;
+    }
+    .container .menu .sub-menu{
+        position: static;
+        opacity: 1;
+        transform: none;
+        visibility: visible;
+        padding: 0;
+        transition: none;
+        box-shadow: none;
+        width: 100%;
+        display: none;
+    }
+
+    .container .menu .sub-menu li:last-child{
+        border: none;
+    }
+    .container .menu .sub-menu a{
+        padding: 12px 0 12px 15px;
+    }
+    .container .menu .sub-menu .sub-menu a{
+        padding-left: 30px ;
+    }
+    .container .menu .sub-menu .sub-menu .sub-menu a{
+        padding-left: 45px ;
+    }
+    .container .menu .sub-menu span{
+        background-image: none;
+    }
+    .container .menu .sub-menu i{
+        transform: none;
+        right: 0;
+    }
+    .header-right .open-menu-btn{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        justify-content: center;
+        height: 40px;
+        width: 44px;
+        cursor: pointer;
+        position: relative;
+        background-color: transparent ;
+        border: none;
+    }
+    .header-right .open-menu-btn .line{
+        height: 2px;
+        width: 30px;
+        background-color: hsl(0, 0%, 100%);
+        position: absolute;
+    }
+    .header-right .open-menu-btn .line-1{
+        transform: translateY(-8px);
+    }
+    .header-right .open-menu-btn .line-3{
+        transform: translateY(8px);
+    }
+
+} */
+
+@media only screen and (min-width: 280px) and (max-width: 479px) {
+    .mm-toggle-wrap {
+        display: block;
+        margin-left: 15px;
+        margin-top: 12px;
+        z-index: 100;
+    }
+
+    .mm-toggle {
+        display: block;
+        padding: 1px 0px;
+    }
+
+    .mm-label {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        line-height: 28px;
+        margin: 0;
+        padding: 9px 15px 11px;
+        text-transform: uppercase;
+    }
+
+    .navleft-container {
+        position: relative;
+    }
+
+    .mega-menu-category > .nav > li > a {
+        padding: 6.5px 10px;
+        font-size: 11px;
+    }
+
+    .mega-menu-category > .nav > li > a:after {
+        top: 3px;
+    }
+
+    .mega-menu-title h3:after {
+        background: inherit;
+        width: 40px;
+    }
+
+     .mega-menu-category {
+        margin-top: -6px;
+    }
+
+    .mega-menu-category {
+        width: 175px;
+    }
+
+    .mega-menu-title {
+        width: 100%;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .menu .dropdown {
+        position: static;
+    }
+
+    .menu .dropdown .sub-menu {
+        display: none;
+    }
+
+    .menu .dropdown .fa-chevron-down {
+        display: none;
+    }
+
+    .menu .dropdown.active > .sub-menu {
+        display: block;
+    }
+    .menu .dropdown.active > .sub-menu .sub-menu-right{
+        display: block;
+    }
+}

@@ -1,0 +1,137 @@
+<!-- Breadcrumbs -->
+
+<div class="breadcrumbs" style="padding-top: 219px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <ul>
+          <li class="home"> <a title="Go to Home Page" href="index.html">Home</a><span>&raquo;</span></li>
+          <li><strong>Wishlist</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Breadcrumbs End -->
+<!-- Main Container -->
+<section class="main-container col2-right-layout">
+  <div class="main container">
+    <div class="row">
+      <div class="col-main col-sm-9 col-xs-12">
+        <div class="my-account">
+          <div class="page-title">
+            <h2>My Wishlist</h2>
+          </div>
+          <div class="wishlist-item table-responsive">
+            <table class="col-md-12">
+              <thead>
+                <tr>
+                  <th class="th-product">Images</th>
+                  <th class="th-details">Product Name</th>
+                  <th class="th-price">Unit Price</th>
+                  <th class="th-total th-add-to-cart">Add to Cart </th>
+                  <th class="th-delate">Remove</th>
+                </tr>
+              </thead>
+              <tbody *ngFor="let item of dataSource">
+                <tr>
+                  <td class="th-product"><a href="#"><img src="{{item.folderPath1}}" alt="cart"></a></td>
+                  <td class="th-details">
+                    <h2><a href="#">{{item.productName}}</a></h2>
+                  </td>
+                  <td class="th-price">INR.{{item.mrp}}</td>
+                  <th class="td-add-to-cart"> <button type="button" class="btn btn-danger" (click)="addtocart(item)"><span> Add to Cart</span> </button></th>
+                  <td class="th-delate" (click)="removeItem(item)"><a><i class="fa fa-trash-o"></i></a></td>
+                </tr>
+              </tbody>
+            </table>
+            <a href="checkout.html" routerLink="/checkout" class="all-cart">Add all to cart</a>
+          </div>
+        </div>
+      </div>
+      <aside class="right sidebar col-sm-3 col-xs-12">
+        <div class="sidebar-account block">
+          <div class="sidebar-bar-title">
+            <h3>My Account</h3>
+          </div>
+          <div class="block-content">
+            <ul>
+              <li><a>Account Dashboard</a></li>
+              <li><a href="#">Account Information</a></li>
+              <li><a href="#">Address Book</a></li>
+              <li><a href="#">My Orders</a></li>
+              <li><a href="#">Billing Agreements</a></li>
+              <li><a href="#">Recurring Profiles</a></li>
+              <li><a href="#">My Product Reviews</a></li>
+              <li><a href="#">My Tags</a></li>
+              <li class="current"><a href="#">My Wishlist</a></li>
+              <li><a href="#">My Downloadable</a></li>
+              <li class="last"><a href="#">Newsletter Subscriptions</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="compare block">
+          <div class="sidebar-bar-title">
+            <h3>Compare Products (2)</h3>
+          </div>
+          <div class="block-content">
+            <ol id="compare-items">
+              <li class="item"> <a href="#" title="Remove This Item" class="remove-cart"><i class="icon-close"></i></a>
+                <a href="#" class="product-name">Vestibulum porta tristique porttitor.</a> </li>
+              <li class="item"> <a href="#" title="Remove This Item" class="remove-cart"><i class="icon-close"></i></a>
+                <a href="#" class="product-name">Lorem ipsum dolor sit amet</a> </li>
+            </ol>
+            <div class="ajax-checkout">
+              <button type="submit" title="Submit" class="button button-compare"> <span> Compare</span></button>
+              <button type="submit" title="Submit" class="button button-clear"> <span> Clear All</span></button>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+
+<!-- start service section -->
+
+<div class="description-services">
+  <div class="container">
+      <div class="row">
+          <div class="col col-md-3 col-sm-6 col-xs-12">
+              <div class="text-des1" routerLink="/about" routerLinkActive="active">
+                  <div><i class="fa fa-paper-plane"></i>
+                    <h3>World-Wide Shipping</h3>
+                    <p>On order over INR99</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col col-md-3 col-sm-6 col-xs-12">
+              <div class="text-des1" routerLink="/refund-policy" routerLinkActive="active">
+                  <div class="des1"><i class="fa fa-rotate-right"></i>
+                    <h3>30 Days Return</h3>
+                    <p>Moneyback guarantee </p>
+                  </div>
+              </div>
+          </div>
+          <div class="col col-md-3 col-sm-6 col-xs-12">
+              <div class="text-des1" >
+                  <div><i class="fa fa-umbrella"></i>
+                    <h3>Support 24/7</h3>
+                    <p>Call us: +917972050414</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col col-md-3 col-sm-6 col-xs-12">
+              <div class="text-des1"  routerLink="/return-policy" routerLinkActive="active">
+                  <div><i class="fa fa-tags"></i>
+                    <h3>Member Discount</h3>
+                    <p>25% on order over INR199</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- service section end -->

@@ -1,0 +1,12 @@
+@media (max-width:992px) {
+    #footr {
+       margin-bottom: 165px;    
+    }
+ }
+ .footerInfo{
+   text-align: justify;
+   text-justify: inter-word;
+ }
+ a{
+   text-decoration:none;
+ }

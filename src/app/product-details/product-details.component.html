@@ -1,0 +1,8 @@
+<!-- product-details.component.html -->
+<div *ngIf="productDetails">
+    <h2>{{ productDetails.productName }}</h2>
+    <img [src]="productDetails.folderPath1" width="100px" height="100px" alt="{{ productDetails.productName }}">
+    <p>{{productDetails.mrp}}</p>
+   
+  </div>
+  

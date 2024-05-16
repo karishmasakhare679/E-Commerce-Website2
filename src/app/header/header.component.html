@@ -1,0 +1,212 @@
+<div id="mobile-menu" style="left: 0px; width: 250px; height: 8081px; display: block; overflow: hidden;">
+  <ul class="mobile-menu">
+    <li *ngFor="let row of DropdownLIst" value="{{row.id}}" value="{{row.id}}">
+      <span class="expand fa fa-plus" style="padding-bottom: 12.5px; padding-top: 12.5px;"
+        (click)="list_of_id(row.id )"></span>
+      <div>
+        <a href="" style="padding-right: 55px;">{{row.categoryName}}</a>
+      </div>
+      <ul>
+        <!-- <ul class="level1"> -->
+        <li *ngFor="let sub of SubDropdownLIst" (click)="list_of_Prod_id(sub.id)" class="dropdown-toggle" id="sub-menu"
+          value="{{sub.fkWebSite_Category}}">
+          <span class="expand fa fa-plus" style="padding-bottom: 12.5px; padding-top: 12.5px;"></span>
+          <div *ngIf="row.id==sub.fkWebSite_Category"><a href="#" class=""
+              style="padding-right: 55px;">{{sub.subCategory}}</a></div>
+          <!-- <ul class="level1" style="display: none;"> -->
+          <ul>
+            <li *ngFor="let col of ProdList" value="{{col.fkWebSiteSub_Category}}">
+              <div *ngIf="sub.id==col.fkWebSiteSub_Category"><a href="">{{col.prodCategory}}</a></div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<div id="page">
+  <div class="jtv-sticky-header">
+    <div class="header-container">
+      <div class="header-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4 col-md-4 col-xs-12">
+              <!-- Default Welcome Message -->
+              <!-- <div class="welcome-msg hidden-xs hidden-sm">Default welcome msg! </div> -->
+              <!-- Language &amp; Currency wrapper -->
+              <div class="language-currency-wrapper">
+                <div class="inner-cl">
+                  <div class="block block-language form-language">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- top links -->
+            <div class="headerlinkmenu col-md-8 col-sm-8 col-xs-12"> <span class="phone  hidden-xs hidden-sm">Call Us:
+                +917972050414</span>
+              <ul class="links">
+                <li class="hidden-xs"><a title="Help Center" href="#"><span>Help Center</span></a></li>
+                <!-- <li><a title="Store Locator" href="#"><span>Store Locator</span></a></li> -->
+                <li><a title="Checkout" routerLink="checkout" routerLinkActive="active"><span>Checkout</span></a>
+                </li>
+                <li>
+                  <div class="dropdown"><a class="current-open" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false"><span>My Account</span> <i class="fa fa-angle-down"></i></a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a routerLink="about" routerLinkActive="active">About us</a></li>
+                      <li><a routerLink="login" routerLinkActive="active">Log In</a></li>
+                      <li><a routerLink="ragister" routerLinkActive="active">Register</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="dropdown"><a class="current-open" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false"><span><i class="fa fa-user"></i>&nbsp;{{username}}</span> <i
+                        class="fa fa-angle-down"></i></a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a type="submit" (click)="logout()" href="/home">Logout</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- header inner -->
+      <div class="header-inner">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-3 col-xs-12 jtv-logo-block">
+              <!-- Header Logo -->
+              <div class="logo"><a title="e-commerce" routerLink="/home" routerLinkActive="active"><img alt="WingoTrend"
+                    title="WingoTrend" style="margin-top: -25px;" src="assets/images/Wingotrends.png"></a> </div>
+            </div>
+
+
+
+
+
+            <!-- Start Search -->
+            <div class="col-xs-12 col-sm-5 col-md-6 jtv-top-search">
+              <div class="top-search">
+                <div id="search">
+                  <form [formGroup]="searchform">
+                    <div class="input-group" style="display: grid;z-index:2">
+                      <input type="text" formControlName="Id" class="form-control" placeholder="Enter your search..."
+                        [(ngModel)]="searchText" autocomplete="off" name="search" id="searchontest"
+                        (keyup)="WebSite_Product_Search() ">
+                      <div id="card">
+                        <div *ngFor="let option of SpResult |filter:searchText">
+                          <p id="tablelist" (click)="RowSelected(option.id)">{{option.productName}}</p>
+                        </div>
+                      </div>
+                      <button class="btn-search" type="submit" (click)="reset()">
+                        <i class="fa fa-search" style="padding: 10px; font-size: 20px; margin-top: -4px;"
+                          (keyup)="Test_AutoSearch()"></i>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <!-- End Search -->
+
+
+
+
+
+            <div class="col-xs-12 col-sm-4 col-md-3 top-cart">
+              <!-- top cart -->
+              <div class="top-cart-contain">
+                <div class="mini-cart">
+                  <div data-toggle="dropdown" data-hover="dropdown" class="basket dropdown-toggle">
+                    <a>
+                      <div class="cart-icon" (click)="hide()"><i class="icon-basket-loaded icons"></i><span
+                          class="cart-total">{{totalItem}}</span>
+                      </div>
+                      <div class="shoppingcart-inner hidden-xs"><span class="cart-title">My Cart</span> </div>
+                    </a>
+                  </div>
+                  <div>
+                    <div class="top-cart-content" *ngFor="let item of products; let i = index">
+                      <div class="block-subtitle hidden">Recently added items</div>
+                      <ul id="cart-sidebar" class="mini-products-list" *ngFor="let item of products; let i = index">
+                        <li class="item odd"> <a title="Product title here" class="product-image"><img
+                              [src]="item.folderPath1" alt="html Template" width="65"></a>
+                          <div class="product-details" (click)="removeItem(item)"> <a title="Remove This Item"
+                              class="remove-cart"><i class="pe-7s-trash"></i></a>
+                            <p class="product-name"><a>{{item.productName}}</a>
+                            </p>
+                            <strong>{{item.qty}}</strong> x <span class="price"> Rs.{{item.totalPrice}}</span>
+                          </div>
+                        </li>
+                      </ul>
+                      <div class="top-subtotal">Subtotal: <span class="price"> Rs.{{grandTotal}}</span></div>
+                      <div class="actions">
+                        <button class="btn-checkout" type="button" routerLink="checkout" routerLinkActive="active"><i
+                            class="fa fa-check"></i><span>Checkout</span></button>
+                        <button class="view-cart" type="button" click="location.href='shopping_cart.html'"
+                          routerLink="my_cart" routerLinkActive="active"><i class="fa fa-shopping-cart"></i><span>View
+                            Cart</span></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav style="margin-top: -20px;">
+      <div class="container">
+        <div class="row">
+          <div class="mm-toggle-wrap">
+            <div class="mm-toggle"><i class="fa fa-align-justify"></i> </div>
+            <span class="mm-label">All Categories</span>
+          </div> 
+           <div class="col-md-3 col-sm-3 mega-container hidden-xs">
+            <div class="navleft-container">
+              <div class="mega-menu-category">
+                <ul class="nav">
+                </ul>
+              </div>
+            </div>
+          </div>
+
+            <!--start Navabar -->
+             <div class="menu"> 
+            <ul>
+              <li class="dropdown" *ngFor="let row of DropdownLIst" >
+                <a href="#" (click)="list_of_id(row.id)">{{row.categoryName}}</a>
+                <i class="fa fa-chevron-down"></i>
+                <ul class="sub-menu" >
+                  <li class="dropdown" *ngFor="let sub of SubDropdownLIst">
+                    <a href="#"  (click) = "list_of_Prod_id(sub.id)"><span>{{sub.subCategory}}</span></a>
+                    <i class="fa fa-chevron-down"></i>
+                    <ul class="sub-menu sub-menu-right" >
+                      <li class="dropdown" *ngFor="let col of ProdList" value="{{col.fkWebSiteSub_Category}}">
+                        <a href="#"   (click)="list_of_prod_details(col.id)"><span *ngIf="sub.id==col.fkWebSiteSub_Category">{{col.prodCategory}}</span></a>
+                        <i class="fa fa-chevron-down"></i>
+                        <ul class="sub-menu sub-menu-right" >
+                          <li class="dropdown" *ngFor="let column of ProdInsert " value="{{column.fkWebsite_Prod_Category}}">
+                            <a href="#"  (click)="openProductPage( column.id ,column.imgPath11)" ><span *ngIf="col.id==column.fkWebsite_Prod_Category">{{column.productName}}</span></a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div> 
+            <!--End Nav Bar-->
+        </div>
+      </div>
+    </nav>
+    <app-product-details [productId]="selectedData"></app-product-details>
+    
+  </div>
+</div>

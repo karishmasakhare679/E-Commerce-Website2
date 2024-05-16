@@ -1,0 +1,11 @@
+@media (min-width:992px) {
+    #checkout{
+        width: 60%;
+    }
+}
+
+@media (max-width:992px) {
+    #checkout{
+        width: 100%;
+    }
+}

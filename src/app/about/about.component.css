@@ -1,0 +1,114 @@
+.aboutUS{
+    font-weight: bold;
+    text-decoration: underline;
+    color: black;
+   
+}
+.about-page{
+    text-justify: inter-word;
+    text-align: justify;
+    
+}
+
+
+
+/* Style for the container */
+.description-services .container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow items to wrap to next line */
+  }
+  
+  /* Style for the columns */
+  .description-services .col {
+    flex: 0 0 25%;
+    padding: 0 15px;
+    box-sizing: border-box; /* Include padding in column width */
+  }
+  
+  /* Style for the service blocks */
+  .text-des1 {
+    background-color: #f9f9f9;
+    padding-bottom: 20px;
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 30px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin: 5px;
+    min-width: 220px; /* Set a minimum width for better responsiveness */
+  }
+  
+  /* Hover effect */
+  .text-des1:hover {
+    transform: translateY(-10px);
+    background-color: darkgray;
+  }
+  .text-des1 p:hover{
+    color: #f9f9f9;
+  }
+  
+  /* Style for icons */
+  .text-des1 i {
+    font-size: 30px;
+    margin-bottom: 20px;
+    position:relative;
+    top: 50px;
+    right: 80px;
+  }
+  
+  /* Style for headings */
+  .text-des1 h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  /* Style for paragraph */
+  .text-des1 p {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  /* Responsive styles */
+  @media screen and (max-width: 768px) {
+    .description-services .col {
+      flex: 0 0 50%; /* Two columns on smaller screens */
+    }
+    .text-des1 i {
+        font-size: 30px;
+        margin-bottom: 20px;
+        position:relative;
+        top: 50px;
+        right: 80px;
+      }
+      .breadcrumbs{
+        margin-top: 100px;
+      }
+
+  }
+  
+  @media screen and (max-width: 576px ) {
+    .description-services .col {
+      flex: 0 0 100%; /* Full width on even smaller screens */
+    }
+    .text-des1 i {
+        font-size: 30px;
+        margin-bottom: 20px;
+        position:relative;
+        top: 50px;
+        right: 100px;
+      }
+      .breadcrumbs{
+        margin-top: 100px;
+      }
+
+  }
+  
+  @media screen and (max-width: 700px ) {
+    .breadcrumbs{
+        margin-top: 100px;
+      }
+      
+  }
