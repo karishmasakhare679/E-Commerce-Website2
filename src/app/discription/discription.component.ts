@@ -81,8 +81,9 @@ export class DiscriptionComponent implements OnInit {
     this.table.style.display = 'none';
     console.log(this.table)
   }
-  select(u: any) {
+  select(u: any) {debugger
     // debugger
+    alert("are you want to add product on wishlist ");
     this.selectedData = u;
     localStorage.setItem('setList', JSON.stringify(this.selectedData));
     this.route.navigate(['/wishlist/']);
@@ -90,7 +91,9 @@ export class DiscriptionComponent implements OnInit {
     this.cards = document.getElementById("card");
     this.cards.style.display = "none";
     this.table.style.display = 'none';
+    
     console.log(this.table)
+    
   }
   WebSite_Product_BestSeller() {
     var MoObj: any = {}
